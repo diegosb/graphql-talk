@@ -15,7 +15,7 @@ const Wrapper = styled.div`
 `
 
 const client = new ApolloClient({
-  uri: 'http://azus-br-moderation-api.azurewebsites.net/graphiql'
+  uri: 'http://azus-br-moderation-api.azurewebsites.net/api/graphql'
 })
 
 const GET_MODERATIONS = gql`
@@ -63,7 +63,7 @@ const ModerationsGraphQL = () => (
                     <td>{moderation.insurerName}</td>
                     <td>{moderation.quotationIdentifier}</td>
                     <td>{moderation.status}</td>
-                    <td>{moderation.type}</td>
+                    <td>{moderation.moderationType}</td>
                   </tr>
                 ))}
               </tbody>
