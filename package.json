@@ -1,0 +1,20 @@
+{
+  "name": "GraphQL",
+  "version": "1.0.0",
+  "description": "Apresentação talk sobre graphql",
+  "main": "index.js",
+  "author": "Diego Batista, Guilherme Bueno",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "mdx-deck deck.mdx",
+    "build": "mdx-deck build deck.mdx"
+  },
+  "dependencies": {
+    "mdx-deck": "^1.8.2"
+  },
+  "devDependencies": {
+    "mdx-deck-code-surfer": "^0.5.3",
+    "raw-loader": "^1.0.0"
+  }
+}

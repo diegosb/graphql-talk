@@ -1,0 +1,146 @@
+import { CodeSurfer } from "mdx-deck-code-surfer"
+import { future } from "mdx-deck/themes"
+import nightOwl from "prism-react-renderer/themes/nightOwl"
+import Split from './Split.js'
+
+export { components } from "mdx-deck-code-surfer"
+export const theme = {
+  ...future,
+  codeSurfer: {
+    ...nightOwl,
+    showNumbers: false
+  }
+}
+
+# GraphQL 
+# +
+# Apollo
+
+---
+
+## O que é GraphQL?
+* Query Language para APIs
+* Mais eficiente e flexível do que o Rest
+* Dá ao client o poder de realizar buscas declarativas
+* Ao invés de termos vários endpoints, o GraphQL expõe apenas um
+* Torna mais fácil a evolução nas APIs
+
+---
+
+## GraphiQL Developer tools
+<video controls="" autoplay="" name="media"><source src="https://graphql.org/img/graphiql.mp4?x" type="video/mp4" /></video>
+
+---
+
+## Solicite apenas o que você precisa
+
+---
+
+export default Split
+
+``` graphql
+// Query
+
+{
+    hero {
+        name
+        height
+        mass
+    }
+}
+
+
+// Resultado
+
+{
+    "name": "Luke Skywalker",
+    "height": 1.72,
+    "mass": 77
+}
+```
+---
+
+## Organizado em termos de types e fields, não endpoints
+
+---
+
+export default Split
+
+``` graphql
+type Query {
+    hero: Character
+}
+
+type Character {
+    name: String
+    friend: [Character]
+    homeWorld: Planet
+    species: Species
+}
+```
+```graphql
+type Planet {
+    name: String
+    climate: String
+}
+
+type Species {
+    name: String
+    lifespan: Int
+    origin: Planet
+}
+
+
+```
+---
+## E o que muda no front end?
+<iframe src="https://giphy.com/embed/MsWnkCVSXz73i" width="480" height="271" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+---
+<img src="https://www.apollographql.com/docs/react/images/logo-apollo-space-left.svg"/>
+---
+## Algumas features do Apollo
+* Zero-config caching
+* Declarative data fetching
+* Ecossistema 
+
+---
+<CodeSurfer
+  code={require("!raw-loader!./snippets/Apollo.jsx")}
+  steps={[
+    { notes: "Exemplo de componente em React usando Apollo" },
+    { range: [5, 13], notes: "Query" },
+    { range: [15, 23], notes: "Componente query" },
+    { lines: [17], notes: "Props auxiliares do Apollo"},
+    { lines: [18]},
+    { lines: [19]},
+    { lines: [20]}
+  ]}
+/>
+---
+
+## Moderation API
+
+---
+
+<CodeSurfer
+  title="Moderation Component"
+  code={require("!raw-loader!./snippets/Moderation.jsx")}
+  steps={[
+    { notes: "Listagem de moderações" },
+    { range: [2, 4], notes: "⬇️" },
+    { range: [17, 19], notes: "⬇️" },
+    { range: [21, 31], notes: "⬇️" },
+    { lines: [43], notes: "⬇️" },
+    { lines: [44], notes: "⬇️" },
+    { lines: [45], notes: "⬇️" },
+    { lines: [46], notes: "⬇️" },
+    { range: [33, 40], notes: "⬇️" },
+    { lines: [47], notes: "⬇️" },
+    { range: [60, 70], notes: "⬇️" },
+  ]}
+/>
+
+---
+
+# The end
+<iframe src="https://giphy.com/embed/de5bARu0SsXiU" width="480" height="253" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
